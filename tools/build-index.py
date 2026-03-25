@@ -22,10 +22,10 @@ from collections import defaultdict
 # === CONFIGURATION ===
 
 # Directory containing your memory files
-MEMORY_DIR = sys.argv[1] if len(sys.argv) > 1 else "memory"
+MEMORY_DIR = os.path.normpath(sys.argv[1]) if len(sys.argv) > 1 else "memory"
 
 # Output file for the index
-OUTPUT_FILE = sys.argv[2] if len(sys.argv) > 2 else os.path.join(MEMORY_DIR, "topic-index.md")
+OUTPUT_FILE = os.path.normpath(sys.argv[2]) if len(sys.argv) > 2 else os.path.join(MEMORY_DIR, "topic-index.md")
 
 # Additional top-level files to index (relative to workspace root)
 EXTRA_FILES = ["MEMORY.md"]
